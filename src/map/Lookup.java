@@ -22,7 +22,7 @@ public class Lookup {
         return lat + "\t" + lon;
 	}
 
-	private static JSONArray queryURL(String query) {
+	static JSONArray queryURL(String query) {
 		JSONArray results = new JSONArray();
 		try {
 			String urlString = "https://nominatim.openstreetmap.org/search?q=" + URLEncoder.encode(query, "UTF-8") + "&format=json";

@@ -1,6 +1,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java"%>
 <%@ page import="map.Lookup" %>
 <%@ page import="map.Location" %>
+<%@ page import="map.Util" %>
 <html>
 <head>
 	<meta name="viewport" content="initial-scale=1, maximum-scale=1">
@@ -29,6 +30,7 @@
 					</li>
 					<li class="nav-item">
 						<a class="nav-link" href="#About">About</a>
+	
 					</li>
 				</ul>
 			</div>
@@ -75,7 +77,7 @@
 	<%
 	String place = request.getParameter("place");
 	if (place != null && !place.isEmpty()) {
-       	Location loc = Lookup.lookupPlace(place);
+       	Location loc = Util.lookupPlace(place);
        		if (loc != null) {
         	double lat = loc.getLat();
         	double lon = loc.getLon(); %>
