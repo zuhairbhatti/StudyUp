@@ -15,7 +15,7 @@ public class Location {
 		this.lat = lat;
 		this.bounds = bounds;
 	}
-	
+
 	public double[] getBoundingBox() {
 		return this.bounds;
 	}

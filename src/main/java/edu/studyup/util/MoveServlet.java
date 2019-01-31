@@ -1,4 +1,4 @@
-package edu.studyup.data;
+package edu.studyup.util;
 
 import java.io.IOException;
 import java.util.Arrays;
@@ -12,13 +12,15 @@ import javax.servlet.http.HttpServletResponse;
 
 public class MoveServlet extends HttpServlet {
 	private static final long serialVersionUID = -5273788106109654170L;
-	
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
+	protected void doGet(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
 		String boundingBox = request.getParameter("bounds");
-		if (boundingBox == null || boundingBox.isEmpty()){
+		if (boundingBox == null || boundingBox.isEmpty()) {
 			return;
 		}
-		List<Double> bounds = Arrays.stream(boundingBox.split(",")).map(e -> Double.parseDouble(e.trim())).collect(Collectors.toList());
+		List<Double> bounds = Arrays.stream(boundingBox.split(",")).map(e -> Double.parseDouble(e.trim()))
+				.collect(Collectors.toList());
 		response.setContentType("text/plain");
 		response.getWriter().write(bounds.toString());
 	}
